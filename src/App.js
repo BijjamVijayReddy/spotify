@@ -31,6 +31,7 @@ const App = () => {
 
   return (
     <div>
+      <h1>Vijay</h1>
       {token ? ( <Player />) : <Login />}
     </div>
   )
