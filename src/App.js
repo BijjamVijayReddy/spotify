@@ -9,7 +9,7 @@ const spotify = new SpotifyWebApi();
 
 const App = () => {
   // const [isToken, setIsToken] = useState(null);
-  const [{token,}, dispatch] = DataLayerValue();
+  const [{ token,response }, dispatch] = DataLayerValue();
 
   React.useEffect(() => {
     const hash = getAccessToken();
@@ -34,19 +34,31 @@ const App = () => {
         })
       })
 
+      spotify.getUserPlaylists().then((playlist) => {
+        dispatch({
+          type: "SET_PLAYLIST",
+          playlist: playlist
+        });
+
+        spotify.getPlaylist("43MaGQWbxfcdVtyk4V6u79").then((response) => { 
+          dispatch({
+            type: "SET_DISCOVER_WEEKLY",
+            discover_weekly: response,
+          })
+        })
+      })
+
     } else {
     }
   }, []);
 
-  // console.log("User " + user)
-  // console.log(" Dispatch token " + token);
-  // console.log("token " + isToken)
+console.log("discover_weekly " + response)
 
 
 
   return (
     <div>
-      {token ? (<Player  spotify={spotify} />) : <Login />}
+      {token ? (<Player spotify={spotify} />) : <Login />}
     </div>
   )
 }

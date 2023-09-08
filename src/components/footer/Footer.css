@@ -1,10 +1,69 @@
 
 .footer {
+   display: flex;
+   justify-content: space-between;
    position: fixed;
    bottom: 0;
    height: 65px;
-   width: 100%;
+   width: 97%;
    color: #fff;
    background-color: #282828;
    padding: 20px;
+}
+
+.footer_left {
+  flex:0.3;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  color: #ffff;
+  max-width: 300px;
+}
+
+.footer_ablumInfo{
+   height: 60px;
+   width: 60px;
+   margin-right: 20px;
+   object-fit: contain;
+}
+
+.footer_center {
+   flex:0.4;
+   padding: 0 100px;
+   color:#ffff;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   max-width: 300px;
+   cursor: pointer;
+}
+
+.footer__green {
+   color: #1ed15e;
+ }
+
+ .footer__icon:hover,
+ .footer__green:hover{
+   transition: transform 0.2s ease-in-out;
+   transform: scale(1.2) !important;
+ }
+
+ .footer__songInfo > h4 {
+   margin-bottom: 5px;
+ }
+ 
+ .footer__songInfo > p {
+   font-size: 12px;
+ }
+
+ .footer_right * .MuiSlider-root {
+   color: green;
+ }
+.footer_right {
+   display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  flex: 0.3;
+
 }
