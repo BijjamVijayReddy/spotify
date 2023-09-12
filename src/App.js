@@ -52,7 +52,7 @@ const App = () => {
     }
   }, []);
 
-console.log("discover_weekly " + response)
+// console.log("discover_weekly " + response)
 
 
 
